@@ -1,5 +1,5 @@
 # Hospital-Management-System-For-Staff
-To run the project, clone the project and import it in some IDE(let's say IntelliJ), set up JDK version 18 or above, and run the project. All API endpoints, requests, etc have been attached.
+To run the project, clone the project and import it in some IDE(let's say IntelliJ), set up JDK version 18 or above, and run the project. All API endpoints, requests, etc have been attached. For the database, in-memory database H2 is used. (For local use: http://localhost:8080/h2-console/)
 
 ## **Problem Statement:**
 
