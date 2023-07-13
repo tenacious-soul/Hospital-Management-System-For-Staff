@@ -150,3 +150,22 @@ If {} is passed in the request, by default all admitted patient lists will be re
     ]
     
 }
+
+
+### **3) Discharge patient from hospital.**
+   
+API URL: localhost:8080/hospital-management/dischargePatient (PUT)
+
+####  API Functioning: 
+Patients are searched based on patient_id. patient_status = 1 denotes admitted patients, while patient_status = 0 denoted discharged patients. So, Once a patient is fetched its patient_status is updated from 1 to 0 denoting the patient is now discharged. On successful discharge, the "Patient discharged successfully" message is returned otherwise, the "Patient not found/cannot be discharged" message is returned.
+
+#### API Request:
+
+Pass patient_id in request_param. It's a required field.
+
+#### API Response:
+
+{
+
+    "message": "Patient discharged successfully"
+}
