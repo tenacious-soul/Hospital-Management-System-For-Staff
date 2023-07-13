@@ -5,11 +5,19 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+/**
+ * The type Password config.
+ */
 @Configuration
 public class PasswordConfig {
 
+    /**
+     * Password encoder password encoder.
+     *
+     * @return the password encoder
+     */
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 }

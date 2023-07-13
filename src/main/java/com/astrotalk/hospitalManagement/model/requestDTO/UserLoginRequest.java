@@ -5,6 +5,9 @@ import lombok.*;
 
 import java.io.Serializable;
 
+/**
+ * The type User login request.
+ */
 @Getter
 @Setter
 @NoArgsConstructor

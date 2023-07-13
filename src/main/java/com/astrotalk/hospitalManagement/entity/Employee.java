@@ -3,6 +3,9 @@ package com.astrotalk.hospitalManagement.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+/**
+ * The type Employee.
+ */
 @Getter
 @Setter
 @NoArgsConstructor

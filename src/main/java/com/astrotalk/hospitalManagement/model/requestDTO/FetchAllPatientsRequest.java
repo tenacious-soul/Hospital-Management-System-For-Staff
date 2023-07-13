@@ -7,6 +7,9 @@ import lombok.*;
 
 import java.io.Serializable;
 
+/**
+ * The type Fetch all patients request.
+ */
 @Getter
 @Setter
 @NoArgsConstructor
@@ -27,7 +30,8 @@ public class FetchAllPatientsRequest implements Serializable {
     private Integer roomNumber;
 
     @JsonProperty("patient_status")
-    @Min(0) @Max(1)
+    @Min(0)
+    @Max(1)
     private Integer patientStatus;
 
     @JsonProperty("admission_date")

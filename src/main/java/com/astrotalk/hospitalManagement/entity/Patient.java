@@ -7,6 +7,9 @@ import lombok.*;
 
 import java.time.LocalDate;
 
+/**
+ * The type Patient.
+ */
 @Getter
 @Setter
 @NoArgsConstructor

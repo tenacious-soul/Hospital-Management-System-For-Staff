@@ -7,6 +7,9 @@ import lombok.*;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * The type Patients list.
+ */
 @Getter
 @Setter
 @NoArgsConstructor

@@ -11,12 +11,21 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+/**
+ * The type Employee service.
+ */
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
+    /**
+     * The Employee repository.
+     */
     @Autowired
     EmployeeRepository employeeRepository;
 
+    /**
+     * The Password encoder.
+     */
     @Autowired
     PasswordEncoder passwordEncoder;
 

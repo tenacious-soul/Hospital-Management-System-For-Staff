@@ -6,6 +6,9 @@ import lombok.*;
 
 import java.io.Serializable;
 
+/**
+ * The type Register employee request.
+ */
 @Getter
 @Setter
 @NoArgsConstructor

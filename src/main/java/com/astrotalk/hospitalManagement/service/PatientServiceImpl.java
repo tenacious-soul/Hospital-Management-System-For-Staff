@@ -18,13 +18,22 @@ import java.util.List;
 
 import static com.astrotalk.hospitalManagement.constants.Constants.*;
 
+/**
+ * The type Patient service.
+ */
 @Service
 @Slf4j
 public class PatientServiceImpl implements PatientService {
 
+    /**
+     * The Patient repository.
+     */
     @Autowired
     PatientRepository patientRepository;
 
+    /**
+     * The Formatter.
+     */
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     @Override

@@ -10,6 +10,9 @@ import java.io.Serializable;
 
 import static com.astrotalk.hospitalManagement.constants.Constants.PATIENT_ADMITTED;
 
+/**
+ * The type Admit patient request.
+ */
 @Getter
 @Setter
 @NoArgsConstructor
