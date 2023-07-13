@@ -9,6 +9,8 @@ public class Constants {
 
     public static final String PATIENTS_FETCHED_SUCCESSFULLY = "Patients fetched successfully";
 
+    public static final String PATIENTS_NOT_FOUND = "No patient found";
+
     public static final String PATIENT_DISCHARGED_SUCCESSFULLY = "Patient discharged successfully";
 
     public static final String DISCHARGE_PROCESS_FAILED = "Patient not found/cannot be discharged";

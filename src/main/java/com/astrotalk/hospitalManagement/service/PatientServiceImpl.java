@@ -47,10 +47,18 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public PatientsList getPatientsList(FetchAllPatientsRequest fetchAllPatientsRequest) {
-        LocalDate dateTime = LocalDate.parse(fetchAllPatientsRequest.getAdmissionDate(), formatter);
+        LocalDate dateTime = null;
+        if (fetchAllPatientsRequest.getAdmissionDate() != null) {
+            dateTime = LocalDate.parse(fetchAllPatientsRequest.getAdmissionDate(), formatter);
+        }
+
         List<Patient> allPatients = patientRepository.getAllPatients(fetchAllPatientsRequest.getPatientId(), fetchAllPatientsRequest.getPatientName(),
                 fetchAllPatientsRequest.getPatientStatus() == null ? PATIENT_ADMITTED : fetchAllPatientsRequest.getPatientStatus(),
                 fetchAllPatientsRequest.getMobileNumber(), fetchAllPatientsRequest.getRoomNumber(), dateTime);
+
+        if (allPatients.isEmpty())
+            return PatientsList.builder().patientList(allPatients).message(PATIENTS_NOT_FOUND).build();
+
         return PatientsList.builder().patientList(allPatients).message(PATIENTS_FETCHED_SUCCESSFULLY).build();
     }
 
