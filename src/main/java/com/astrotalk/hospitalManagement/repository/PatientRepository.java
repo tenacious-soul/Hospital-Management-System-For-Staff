@@ -41,4 +41,7 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
     @Modifying
     @Query(value = "UPDATE Patient SET patientStatus=:patientStatus WHERE patientId = :patientId")
     Integer dischargePatient(Long patientId, Integer patientStatus);
+
+    @Query(value = "SELECT patientId FROM Patient WHERE patientId = :patientId AND patientStatus=1")
+    Long findByPatientId(Long patientId);
 }

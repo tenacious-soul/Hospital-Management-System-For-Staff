@@ -75,12 +75,11 @@ public class PatientServiceImpl implements PatientService {
     @Override
     @Transactional
     public ResponseModel dischargePatient(Long patientId) {
-        Integer updateStatus = patientRepository.dischargePatient(patientId, PATIENT_DISCHARGED);
-
-        if (updateStatus == 1)
-            return ResponseModel.builder().message(PATIENT_DISCHARGED_SUCCESSFULLY).build();
-
-        return ResponseModel.builder().message(DISCHARGE_PROCESS_FAILED).build();
+        Long fetchedPatientId = patientRepository.findByPatientId(patientId);
+        if (fetchedPatientId == null)
+            return ResponseModel.builder().message(DISCHARGE_PROCESS_FAILED).build();
+        patientRepository.dischargePatient(patientId, PATIENT_DISCHARGED);
+        return ResponseModel.builder().message(PATIENT_DISCHARGED_SUCCESSFULLY).build();
     }
 
 
