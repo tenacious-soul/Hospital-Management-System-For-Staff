@@ -31,7 +31,7 @@ public class PatientController {
     }
 
     @PutMapping(DISCHARGE_PATIENT)
-    ResponseModel dischargePatient(@Valid @RequestBody @NotNull(message = "patient_id cannot be empty") @JsonProperty("patient_id") Long patientId) {
+    ResponseModel dischargePatient(@Valid @RequestParam("patient_id") @NotNull(message = "patient_id cannot be empty") Long patientId) {
         return patientService.dischargePatient(patientId);
     }
 
