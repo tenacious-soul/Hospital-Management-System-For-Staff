@@ -1,5 +1,6 @@
 package com.astrotalk.hospitalManagement.model.requestDTO;
 
+import com.astrotalk.hospitalManagement.entity.Expenses;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -7,6 +8,7 @@ import jakarta.validation.constraints.Pattern;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 import static com.astrotalk.hospitalManagement.constants.Constants.PATIENT_ADMITTED;
 
@@ -45,9 +47,10 @@ public class AdmitPatientRequest implements Serializable {
     private String admissionDate;
 
     @JsonProperty("expenses")
-    private Integer expenses;
+    private List<Expenses> expenses;
 
     @JsonProperty("patient_status")
+    @Builder.Default
     private Integer patientStatus = PATIENT_ADMITTED;
 
     @NotBlank(message = "Please enter gender")
