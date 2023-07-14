@@ -81,16 +81,24 @@ API URL: localhost:8080/hospital-management/admitPatient (POST)
 ####  API Functioning: 
 All fields of the request are persisted in the database after the required validations are applied.
 
-####  API Request: (Params are mandatory/optional as per use case; In case of required param if the param is missing/null, 400 status code and exception is thrown. )
+####  API Request: (Params are mandatory/optional as per use case; In case of required param if the param is missing/null, 400 status code and an exception is thrown. )
 
 {
     
-    "patient_name": "Christopher",
-    "mobile_number": 9007699822,
-    "age": 81,
+    "patient_name": "Jacob",
+    "mobile_number": 9002299822,
+    "age": 100,
     "room_number": 104,
-    "gender": "Male",
-    "admission_date": "2023-06-17"
+    "gender":"Male",
+    "admission_date": "2023-06-17",
+    "doctor_name": "Dr Riddhi Sudha",
+    "expenses": [{
+        "amount": 3000,
+        "remarks": "Bed Charges"
+    },{
+        "amount": 2000,
+        "remarks": "Doctor visit charges"
+    }]
 }
 
 ####  API Response:
@@ -153,12 +161,12 @@ If {} is passed in the request, by default all admitted patient lists will be re
 }
 
 
-### **3) Discharge patient from hospital.**
+### **4) Discharge patient from hospital.**
    
 API URL: localhost:8080/hospital-management/dischargePatient (PUT)
 
 ####  API Functioning: 
-Patients are searched based on patient_id. patient_status = 1 denotes admitted patients, while patient_status = 0 denoted discharged patients. So, Once a patient is fetched its patient_status is updated from 1 to 0 denoting the patient is now discharged. On successful discharge, the "Patient discharged successfully" message is returned otherwise, the "Patient not found/cannot be discharged" message is returned.
+Patients are searched based on patient_id. patient_status = 1 denotes admitted patients, while patient_status = 0 denotes discharged patients. So, Once a patient is fetched its patient_status is updated from 1 to 0 denoting the patient is now discharged. All expenses are also cleared from the expenses table i.e. record is made inactive(record_status = 1 denotes active admission, while 5 denotes inactive record, i.e. patient discharged). All functionality is kind of soft delete from the system.On successful discharge, the "Patient discharged successfully" message is returned otherwise, the "Patient not found/cannot be discharged" message is returned.
 
 #### API Request:
 
